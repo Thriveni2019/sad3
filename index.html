@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>The Symphony of Raindrops</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `In a bustling city, where the pace of life often drowned out the melody of joy, lived a young musician named Alex. Despite possessing a talent for creating enchanting music, Alex's dreams were stifled by the monotony of a demanding job.
+
+One rainy day, as the cityscape blurred under the curtain of rain, Alex sat by the window, feeling the weight of unfulfilled aspirations. That's when a realization struck—a symphony of raindrops could be the backdrop to a new composition.
+
+Inspired by the rhythmic patter of rain, Alex composed a soulful melody that mirrored the ups and downs of life. The piece resonated with people on a profound level, reminding them that even in the stormiest moments, there's beauty to be found.
+
+The music caught the attention of a renowned composer who invited Alex to collaborate on a grand orchestral performance. As the symphony echoed through the concert hall, Alex's heart swelled with gratitude for the transformative power of embracing life's storms.
+
+The moral of the story: Sadness is like rain—it may pour heavily at times, but within it lies the potential for a symphony of beauty and renewal.
+`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
